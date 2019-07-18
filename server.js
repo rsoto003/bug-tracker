@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 
 const database = require('./config/keys').mongoURI;
 
-mongoose.connect(database)
+mongoose.connect(database, {useNewUrlParser: true})
     .then( () => console.log('MongoDB is up and running...'))
         .catch(err => console.log(err));
 
